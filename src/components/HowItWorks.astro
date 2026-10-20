@@ -1,0 +1,50 @@
+---
+import SectionLabel from "./SectionLabel.astro";
+import { howItWorks } from "../content/landing";
+---
+
+<section class="relative overflow-hidden bg-night text-night-text">
+  <div aria-hidden="true" class="grid-lines absolute inset-0"></div>
+  <div
+    aria-hidden="true"
+    class="glow absolute -inset-x-30 -top-95 h-140 rounded-full opacity-75 md:right-auto md:-left-50 md:-top-130 md:h-205 md:w-225"
+  >
+  </div>
+
+  <div
+    class="relative mx-auto flex max-w-page flex-col gap-6 px-6 pt-16 pb-18 md:flex-row md:flex-wrap md:gap-x-20 md:gap-y-10 md:px-10 md:py-28"
+  >
+    <div class="flex flex-col gap-6 md:grow md:basis-70 md:gap-5">
+      <SectionLabel tone="dark">{howItWorks.label}</SectionLabel>
+      <h2 class="text-heading font-medium text-balance">{howItWorks.title}</h2>
+    </div>
+
+    <ol class="flex flex-col md:min-w-0 md:grow-2 md:basis-140">
+      {
+        howItWorks.steps.map((step, i) => (
+          <li class="flex flex-col gap-1.5 border-t border-white/14 py-4.5 last:border-b md:flex-row md:flex-wrap md:items-baseline md:gap-x-6 md:gap-y-2 md:py-6">
+            {/* Mobile: number and title share a row; desktop: number, title and text are three columns */}
+            <div class="flex items-baseline gap-3 md:contents">
+              <span class="font-mono text-label text-accent-num md:w-10 md:flex-none">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <h3 class="text-step-title font-semibold md:grow md:basis-55">{step.title}</h3>
+            </div>
+            <p class="pl-7 text-step-text text-night-2 md:grow md:basis-60 md:pl-0">{step.text}</p>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>
+
+<style>
+  .grid-lines {
+    background-image: var(--grid-lines);
+    background-size: var(--grid-cell) var(--grid-cell);
+  }
+
+  .glow {
+    background: var(--glow-dusk);
+  }
+</style>

@@ -1,0 +1,16 @@
+---
+interface Props {
+  tone?: "light" | "dark";
+}
+
+const { tone = "light" } = Astro.props;
+---
+
+<p
+  class:list={[
+    "font-mono text-label tracking-label",
+    tone === "dark" ? "text-night-label" : "text-ink-3",
+  ]}
+>
+  <slot />
+</p>

@@ -1,0 +1,54 @@
+---
+import CtaButton from "./CtaButton.astro";
+import SunriseGlow from "./SunriseGlow.astro";
+import { brand, hero } from "../content/landing";
+
+const { contact } = hero;
+---
+
+<!-- On mobile the hero fills the screen and the button sits at the bottom -->
+<section class="flex min-h-svh flex-col md:block md:min-h-0">
+  <header class="relative h-90 flex-none overflow-hidden bg-night md:h-110">
+    <SunriseGlow placement="hero" />
+    <div
+      class="relative mx-auto flex max-w-page items-center gap-2 px-6 pt-6 text-logo font-semibold text-white md:gap-3 md:px-10 md:pt-8"
+    >
+      <span class="size-4.5 rounded-logo bg-linear-to-b/srgb from-indigo to-accent-num md:size-6.5"></span>
+      {brand}
+    </div>
+  </header>
+
+  <div
+    class="flex flex-1 flex-col gap-4 px-6 py-7 md:mx-auto md:grid md:max-w-page md:grid-cols-[repeat(auto-fit,minmax(min(100%,440px),1fr))] md:items-start md:gap-x-20 md:gap-y-12 md:px-10 md:pt-14 md:pb-24"
+  >
+    <h1 class="text-display font-medium text-balance">{hero.title}</h1>
+
+    <div class="flex flex-1 flex-col gap-4 md:gap-6 md:pt-2">
+      <p class="text-lead text-pretty text-ink-2">{hero.subtitle}</p>
+
+      <div class="flex flex-col gap-2.5 rounded-card bg-white px-4 py-3.5 shadow-contact md:px-4.5 md:py-4 md:shadow-contact-lg">
+        <div class="flex items-center justify-between text-card-title font-medium">
+          <span class="flex items-center gap-2">
+            <span class="size-1.75 rounded-full bg-online"></span>
+            {contact.name}
+          </span>
+          <span class="text-card-meta text-ink-4">{contact.lastSeen}</span>
+        </div>
+        <dl class="flex flex-col gap-1 border-y border-line-2 py-2 text-card md:flex-row md:flex-wrap md:gap-x-5 md:gap-y-1.5 md:py-2.5">
+          {
+            contact.details.map(({ label, value }) => (
+              <div class="flex gap-1.5">
+                <dt class="text-ink-4">{label}</dt>
+                <dd>{value}</dd>
+              </div>
+            ))
+          }
+        </dl>
+        <p class="text-card leading-note text-ink-2">{contact.note}</p>
+      </div>
+
+      <div class="flex-1 md:hidden"></div>
+      <CtaButton variant="gradient" class="md:self-start md:px-9" />
+    </div>
+  </div>
+</section>

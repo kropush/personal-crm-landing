@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap&subset=cyrillic" rel="stylesheet">
+<style>
+body{margin:0;background:#dcdad5;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:hover{opacity:.88}
+</style>
+</helmet>
+<div style="display:flex;justify-content:center;padding:40px 0">
+<div style="width:390px;background:#f1efeb;color:#0d0c14;font-family:'Inter Tight',sans-serif;border-radius:36px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(40,20,90,.6)">
+
+<div data-screen-label="01 Первый экран" style="height:844px;display:flex;flex-direction:column">
+<div style="position:relative;height:360px;flex:none;background:#08081a;overflow:hidden">
+<div style="position:absolute;left:-60px;right:-60px;bottom:-260px;height:560px;border-radius:50%;background:radial-gradient(closest-side,#ff8a3d 0%,#f0564a 22%,#8a4cf0 52%,#3b3ff0 72%,rgba(40,40,200,0) 100%)"></div>
+<div style="position:absolute;inset:0;background:repeating-conic-gradient(from 270deg at 50% 100%,rgba(255,255,255,.14) 0deg .25deg,transparent .25deg 12deg)"></div>
+<div style="position:relative;display:flex;justify-content:space-between;align-items:center;padding:56px 24px 0;color:#fff">
+<div style="display:flex;align-items:center;gap:8px;font-weight:600;font-size:17px;letter-spacing:-.02em"><span style="width:18px;height:18px;border-radius:5px;background:linear-gradient(180deg,#4b47f2,#f07a4a)"></span>Личная CRM</div>
+<a href="https://app.example.com" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;color:#c9c8e8">ВОЙТИ →</a>
+</div>
+</div>
+<div style="flex:1;padding:28px 24px 28px;display:flex;flex-direction:column;gap:16px">
+<h1 style="margin:0;font-weight:500;font-size:38px;line-height:1.02;letter-spacing:-.04em;text-wrap:balance">Помните о&nbsp;людях, которые вам важны.</h1>
+<p style="margin:0;font-size:16px;line-height:1.42;color:#4a4752;text-wrap:pretty">Все контакты и заметки в одном месте: открыл, нашел человека, вспомнил, о чем договорились.</p>
+<div style="background:#fff;border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:10px;box-shadow:0 1px 0 rgba(0,0,0,.04),0 10px 24px -18px rgba(30,20,80,.5)">
+<div style="display:flex;justify-content:space-between;align-items:center;font-size:14px;font-weight:500"><span style="display:flex;align-items:center;gap:8px"><span style="width:7px;height:7px;border-radius:50%;background:#2fbf71"></span>Елена Смирнова · продакт</span><span style="font-size:12px;color:#8a8794">вчера</span></div>
+<div style="display:flex;flex-direction:column;gap:4px;font-size:13px;color:#0d0c14;padding:8px 0;border-top:1px solid #eeece8;border-bottom:1px solid #eeece8"><span style="display:flex;gap:6px"><span style="color:#8a8794">Телефон</span>+7 900 482-17-35</span><span style="display:flex;gap:6px"><span style="color:#8a8794">Почта</span>elena.smirnova@example.ru</span></div>
+<div style="font-size:13px;color:#4a4752;line-height:1.4">Договорились: прислать презентацию до пятницы.</div>
+</div>
+<div style="flex:1"></div>
+<a href="https://app.example.com" style="display:flex;justify-content:center;align-items:center;gap:10px;height:56px;border-radius:999px;background:linear-gradient(90deg,#4b47f2,#8a4cf0 55%,#f0663f);color:#fff;font-size:17px;font-weight:500">Открыть CRM <span>→</span></a>
+</div>
+</div>
+
+<div data-screen-label="02 Проблема" style="padding:56px 24px 64px;display:flex;flex-direction:column;gap:24px;border-top:1px solid #e2dfd9">
+<div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:#6b6874"><span>01 / ЗНАКОМО</span></div>
+<h2 style="margin:0;font-weight:500;font-size:34px;line-height:1.02;letter-spacing:-.04em;text-wrap:balance">Знакомо?</h2>
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="background:#fff;border-radius:14px;padding:18px;display:flex;gap:14px;box-shadow:0 10px 24px -18px rgba(30,20,80,.5)"><span style="flex:none;width:8px;height:8px;margin-top:8px;border-radius:50%;background:linear-gradient(135deg,#4b47f2,#8a4cf0)"></span><div style="font-size:16px;line-height:1.42;text-wrap:pretty">В телефоне «Саша работа» и «Лена конференция» — а кто это, уже не вспомнить.</div></div>
+<div style="background:#fff;border-radius:14px;padding:18px;display:flex;gap:14px;box-shadow:0 10px 24px -18px rgba(30,20,80,.5)"><span style="flex:none;width:8px;height:8px;margin-top:8px;border-radius:50%;background:linear-gradient(135deg,#8a4cf0,#f0564a)"></span><div style="font-size:16px;line-height:1.42;text-wrap:pretty">О чём-то договорились в разговоре, а через месяц не помните, о чём именно.</div></div>
+<div style="background:#fff;border-radius:14px;padding:18px;display:flex;gap:14px;box-shadow:0 10px 24px -18px rgba(30,20,80,.5)"><span style="flex:none;width:8px;height:8px;margin-top:8px;border-radius:50%;background:linear-gradient(135deg,#f0564a,#ff8a3d)"></span><div style="font-size:16px;line-height:1.42;text-wrap:pretty">Помните имя, но не знаете, где искать номер или почту.</div></div>
+<div style="background:#fff;border-radius:14px;padding:18px;display:flex;gap:14px;box-shadow:0 10px 24px -18px rgba(30,20,80,.5)"><span style="flex:none;width:8px;height:8px;margin-top:8px;border-radius:50%;background:linear-gradient(135deg,#3b3ff0,#ff8a3d)"></span><div style="font-size:16px;line-height:1.42;text-wrap:pretty">Номера, переписки и заметки разбросаны по телефону, почте, мессенджерам и визиткам.</div></div>
+</div>
+</div>
+
+<div data-screen-label="03 Решение" style="position:relative;background:#08081a;color:#f3f2fa;padding:64px 24px 72px;overflow:hidden">
+<div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:39px 39px"></div>
+<div style="position:absolute;left:-120px;right:-120px;top:-380px;height:560px;border-radius:50%;background:radial-gradient(closest-side,#ff8a3d 0%,#e2504f 18%,#6a45ee 45%,#2c34c8 65%,rgba(20,20,90,0) 100%);opacity:.75"></div>
+<div style="position:relative;display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:#c9c8e8"><span>02 / КАК РАБОТАЕТ</span></div>
+<h2 style="margin:0;font-weight:500;font-size:34px;line-height:1.02;letter-spacing:-.04em;text-wrap:balance">Как это работает</h2>
+<div style="display:flex;flex-direction:column">
+<div style="display:flex;flex-direction:column;gap:6px;padding:18px 0;border-top:1px solid rgba(255,255,255,.14)"><div style="display:flex;gap:12px;align-items:baseline"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#f07a4a">01</span><span style="font-size:18px;font-weight:600;letter-spacing:-.02em">Все контакты в одном списке.</span></div><div style="padding-left:28px;font-size:15px;line-height:1.45;color:#a9a8c2">Открыли — и видите всех.</div></div>
+<div style="display:flex;flex-direction:column;gap:6px;padding:18px 0;border-top:1px solid rgba(255,255,255,.14)"><div style="display:flex;gap:12px;align-items:baseline"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#f07a4a">02</span><span style="font-size:18px;font-weight:600;letter-spacing:-.02em">Поиск по имени.</span></div><div style="padding-left:28px;font-size:15px;line-height:1.45;color:#a9a8c2">Нужный человек находится за секунды.</div></div>
+<div style="display:flex;flex-direction:column;gap:6px;padding:18px 0;border-top:1px solid rgba(255,255,255,.14)"><div style="display:flex;gap:12px;align-items:baseline"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#f07a4a">03</span><span style="font-size:18px;font-weight:600;letter-spacing:-.02em">Карточка на каждого человека.</span></div><div style="padding-left:28px;font-size:15px;line-height:1.45;color:#a9a8c2">Имя, кто это, откуда знакомы, телефон и почта.</div></div>
+<div style="display:flex;flex-direction:column;gap:6px;padding:18px 0;border-top:1px solid rgba(255,255,255,.14)"><div style="display:flex;gap:12px;align-items:baseline"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#f07a4a">04</span><span style="font-size:18px;font-weight:600;letter-spacing:-.02em">Заметки после разговоров.</span></div><div style="padding-left:28px;font-size:15px;line-height:1.45;color:#a9a8c2">О чём поговорили и о чём договорились — прямо в карточке.</div></div>
+<div style="display:flex;flex-direction:column;gap:6px;padding:18px 0;border-top:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14)"><div style="display:flex;gap:12px;align-items:baseline"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#f07a4a">05</span><span style="font-size:18px;font-weight:600;letter-spacing:-.02em">Легко пополнять и исправлять.</span></div><div style="padding-left:28px;font-size:15px;line-height:1.45;color:#a9a8c2">Добавьте новый контакт или поменяйте данные, когда что-то изменилось.</div></div>
+</div>
+</div>
+</div>
+
+<div data-screen-label="04 Выгоды" style="padding:64px 24px 64px;display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:#6b6874"><span>03 / ЧТО ДАЁТ</span></div>
+<h2 style="margin:0;font-weight:500;font-size:34px;line-height:1.02;letter-spacing:-.04em;text-wrap:balance">Что это вам даст</h2>
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="background:#fff;border-radius:14px;padding:20px 18px;display:flex;flex-direction:column;gap:8px;box-shadow:0 10px 24px -18px rgba(30,20,80,.5)"><span style="width:28px;height:4px;border-radius:2px;background:linear-gradient(90deg,#4b47f2,#f0663f)"></span><div style="font-size:19px;font-weight:600;letter-spacing:-.025em;line-height:1.2">Вы помните, кто есть кто.</div><div style="font-size:15px;line-height:1.45;color:#4a4752">Даже если виделись всего один раз.</div></div>
+<div style="background:#fff;border-radius:14px;padding:20px 18px;display:flex;flex-direction:column;gap:8px;box-shadow:0 10px 24px -18px rgba(30,20,80,.5)"><span style="width:28px;height:4px;border-radius:2px;background:linear-gradient(90deg,#4b47f2,#f0663f)"></span><div style="font-size:19px;font-weight:600;letter-spacing:-.025em;line-height:1.2;text-wrap:balance">Разговор продолжается с того места, где остановились.</div><div style="font-size:15px;line-height:1.45;color:#4a4752">Перед встречей откройте заметки — и вспомните, о чём говорили.</div></div>
+<div style="background:#fff;border-radius:14px;padding:20px 18px;display:flex;flex-direction:column;gap:8px;box-shadow:0 10px 24px -18px rgba(30,20,80,.5)"><span style="width:28px;height:4px;border-radius:2px;background:linear-gradient(90deg,#4b47f2,#f0663f)"></span><div style="font-size:19px;font-weight:600;letter-spacing:-.025em;line-height:1.2">Вы держите слово.</div><div style="font-size:15px;line-height:1.45;color:#4a4752">Всё, о чём договорились, записано.</div></div>
+<div style="background:#fff;border-radius:14px;padding:20px 18px;display:flex;flex-direction:column;gap:8px;box-shadow:0 10px 24px -18px rgba(30,20,80,.5)"><span style="width:28px;height:4px;border-radius:2px;background:linear-gradient(90deg,#4b47f2,#f0663f)"></span><div style="font-size:19px;font-weight:600;letter-spacing:-.025em;line-height:1.2">Нужный контакт — за секунды.</div><div style="font-size:15px;line-height:1.45;color:#4a4752">Не нужно искать по телефону, мессенджерам и визиткам.</div></div>
+<div style="background:#fff;border-radius:14px;padding:20px 18px;display:flex;flex-direction:column;gap:8px;box-shadow:0 10px 24px -18px rgba(30,20,80,.5)"><span style="width:28px;height:4px;border-radius:2px;background:linear-gradient(90deg,#4b47f2,#f0663f)"></span><div style="font-size:19px;font-weight:600;letter-spacing:-.025em;line-height:1.2">Голова свободна.</div><div style="font-size:15px;line-height:1.45;color:#4a4752">Не нужно держать всё в памяти.</div></div>
+</div>
+</div>
+
+<div data-screen-label="05 Призыв" style="position:relative;background:#08081a;color:#fff;padding:72px 24px 40px;overflow:hidden">
+<div style="position:absolute;left:-60px;right:-60px;bottom:-300px;height:560px;border-radius:50%;background:radial-gradient(closest-side,#ff8a3d 0%,#f0564a 22%,#8a4cf0 52%,#3b3ff0 72%,rgba(40,40,200,0) 100%)"></div>
+<div style="position:absolute;inset:0;background:repeating-conic-gradient(from 270deg at 50% 100%,rgba(255,255,255,.14) 0deg .25deg,transparent .25deg 12deg)"></div>
+<div style="position:relative;display:flex;flex-direction:column;gap:20px">
+<div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:#c9c8e8">04 / НАЧАТЬ</div>
+<h2 style="margin:0;font-weight:500;font-size:38px;line-height:1.02;letter-spacing:-.04em;text-wrap:balance">Помните о&nbsp;людях, которые вам важны.</h2>
+<a href="https://app.example.com" style="display:flex;justify-content:center;align-items:center;gap:10px;height:56px;border-radius:999px;background:#fff;color:#0d0c14;font-size:17px;font-weight:500;margin-top:8px">Открыть CRM <span>→</span></a>
+<div style="height:160px"></div>
+<div style="display:flex;justify-content:space-between;border-top:1px solid rgba(255,255,255,.25);padding-top:14px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;color:#fff"><span>ЛИЧНАЯ CRM</span><span>APP →</span></div>
+</div>
+</div>
+
+</div>
+</div>
+</x-dc>
+</body>
+</html>

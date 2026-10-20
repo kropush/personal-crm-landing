@@ -1,0 +1,191 @@
+/*
+ * Design tokens: the only place for colors, fonts, type scale, spacing, radii, shadows and effects.
+ * Values come from design/README.md.
+ * Responsive tokens hold the mobile value here and switch to the desktop value in the `md` block below.
+ */
+
+@font-face {
+  font-family: "Inter Tight";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("/fonts/inter-tight-cyrillic.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+  font-family: "Inter Tight";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("/fonts/inter-tight-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+    U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400 500;
+  font-display: swap;
+  src: url("/fonts/jetbrains-mono-cyrillic.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400 500;
+  font-display: swap;
+  src: url("/fonts/jetbrains-mono-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+    U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@theme static {
+  --font-sans: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Spacing unit: p-6 = 24px, gap-2.5 = 10px */
+  --spacing: 0.25rem;
+
+  /* 1200px of content plus 40px side padding */
+  --container-page: 1280px;
+  --container-closing: 820px;
+
+  --color-*: initial;
+  --color-white: #fff;
+  --color-paper: #f1efeb;
+  --color-ink: #0d0c14;
+  --color-ink-2: #4a4752;
+  --color-ink-3: #6b6874;
+  --color-ink-4: #8a8794;
+  --color-line: #e2dfd9;
+  --color-line-2: #eeece8;
+  --color-night: #08081a;
+  --color-night-text: #f3f2fa;
+  --color-night-2: #a9a8c2;
+  --color-night-label: #c9c8e8;
+  --color-indigo: #4b47f2;
+  --color-blue: #3b3ff0;
+  --color-violet: #8a4cf0;
+  --color-coral: #f0564a;
+  --color-orange: #f0663f;
+  --color-amber: #ff8a3d;
+  --color-accent-num: #f07a4a;
+  --color-online: #2fbf71;
+
+  --text-*: initial;
+  --text-display: 38px;
+  --text-display--line-height: 1.02;
+  --text-display--letter-spacing: -0.04em;
+  --text-closing: 38px;
+  --text-closing--line-height: 1.02;
+  --text-closing--letter-spacing: -0.04em;
+  --text-heading: 34px;
+  --text-heading--line-height: 1.02;
+  --text-heading--letter-spacing: -0.04em;
+  --text-lead: 16px;
+  --text-lead--line-height: 1.42;
+  --text-problem: 16px;
+  --text-problem--line-height: 1.42;
+  --text-step-title: 18px;
+  --text-step-title--letter-spacing: -0.02em;
+  --text-step-text: 15px;
+  --text-step-text--line-height: 1.45;
+  --text-benefit-title: 19px;
+  --text-benefit-title--line-height: 1.2;
+  --text-benefit-title--letter-spacing: -0.025em;
+  --text-benefit-text: 15px;
+  --text-benefit-text--line-height: 1.45;
+  --text-button: 17px;
+  --text-logo: 17px;
+  --text-logo--letter-spacing: -0.02em;
+  --text-card-title: 14px;
+  --text-card: 13px;
+  --text-card-meta: 12px;
+  --text-label: 11px;
+  --text-fineprint: 10px;
+
+  --leading-note: 1.4;
+
+  --tracking-label: 0.14em;
+
+  --radius-*: initial;
+  --radius-card: 14px;
+  --radius-logo: 5px;
+  --radius-bullet: 4px;
+  --radius-bar: 2px;
+  --radius-pip: 1px;
+
+  --shadow-*: initial;
+  --shadow-card: 0 10px 24px -18px rgb(30 20 80 / 0.5);
+  --shadow-contact: 0 1px 0 rgb(0 0 0 / 0.04), 0 10px 24px -18px rgb(30 20 80 / 0.5);
+  --shadow-contact-lg: 0 1px 0 rgb(0 0 0 / 0.04), 0 14px 30px -20px rgb(30 20 80 / 0.5);
+  --shadow-bullet: 0 6px 14px -4px rgb(110 70 230 / 0.55);
+}
+
+/* Decorative backgrounds of the dark sections */
+:root {
+  --ray-step: 12deg;
+  --grid-cell: 39px;
+
+  --glow-sunrise: radial-gradient(
+    closest-side,
+    var(--color-amber) 0%,
+    var(--color-coral) 22%,
+    var(--color-violet) 52%,
+    var(--color-blue) 72%,
+    rgb(40 40 200 / 0) 100%
+  );
+  --glow-dusk: radial-gradient(
+    closest-side,
+    var(--color-amber) 0%,
+    #e2504f 18%,
+    #6a45ee 45%,
+    #2c34c8 65%,
+    rgb(20 20 90 / 0) 100%
+  );
+  --rays: repeating-conic-gradient(
+    from 270deg at 50% 100%,
+    rgb(255 255 255 / 0.14) 0deg 0.25deg,
+    transparent 0.25deg var(--ray-step)
+  );
+  --grid-lines:
+    linear-gradient(rgb(255 255 255 / 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 0.05) 1px, transparent 1px);
+}
+
+/* Desktop values (768px and wider) */
+:root {
+  @variant md {
+    --text-display: clamp(44px, 5.4vw, 76px);
+    --text-display--line-height: 0.98;
+    --text-display--letter-spacing: -0.045em;
+    --text-closing: clamp(40px, 5vw, 68px);
+    --text-closing--line-height: 1;
+    --text-closing--letter-spacing: -0.045em;
+    --text-heading: 48px;
+    --text-heading--line-height: 1;
+    --text-lead: 20px;
+    --text-problem: 18px;
+    --text-step-title: 21px;
+    --text-step-text: 17px;
+    --text-benefit-title: 22px;
+    --text-benefit-text: 16px;
+    --text-button: 18px;
+    --text-logo: 26px;
+    --text-logo--letter-spacing: -0.025em;
+    --text-card-title: 15px;
+    --text-card: 14px;
+    --text-card-meta: 13px;
+    --text-label: 12px;
+    --text-fineprint: 11px;
+
+    --radius-card: 16px;
+    --radius-logo: 8px;
+
+    --ray-step: 6deg;
+    --grid-cell: 48px;
+  }
+}

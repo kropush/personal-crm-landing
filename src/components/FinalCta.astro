@@ -1,0 +1,29 @@
+---
+import CtaButton from "./CtaButton.astro";
+import SectionLabel from "./SectionLabel.astro";
+import SunriseGlow from "./SunriseGlow.astro";
+import { APP_URL } from "../config";
+import { finalCta } from "../content/landing";
+---
+
+<section class="relative overflow-hidden bg-night text-white">
+  <SunriseGlow placement="cta" />
+
+  <div
+    class="relative mx-auto flex max-w-page flex-col gap-5 px-6 pt-18 pb-10 md:items-center md:gap-7 md:px-10 md:pt-32 md:text-center"
+  >
+    <SectionLabel tone="dark">{finalCta.label}</SectionLabel>
+    <h2 class="text-closing font-medium text-balance md:max-w-closing">{finalCta.title}</h2>
+    <CtaButton variant="light" class="mt-2 md:px-10" />
+
+    <!-- Room for the glow under the button -->
+    <div class="h-40 md:h-50"></div>
+
+    <footer
+      class="flex justify-between self-stretch border-t border-white/25 pt-3.5 font-mono text-fineprint tracking-label md:pt-4"
+    >
+      <span>{finalCta.footerBrand}</span>
+      <a href={APP_URL}>{finalCta.footerLink} <span aria-hidden="true">→</span></a>
+    </footer>
+  </div>
+</section>

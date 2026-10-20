@@ -1,0 +1,24 @@
+---
+import { APP_URL } from "../config";
+import { ctaLabel } from "../content/landing";
+
+interface Props {
+  variant: "gradient" | "light";
+  class?: string;
+}
+
+const { variant, class: className } = Astro.props;
+---
+
+<a
+  href={APP_URL}
+  class:list={[
+    "flex h-14 items-center justify-center gap-2.5 rounded-full text-button font-medium md:h-15",
+    variant === "gradient"
+      ? "bg-linear-to-r/srgb from-indigo via-violet via-55% to-orange text-white"
+      : "bg-white text-ink",
+    className,
+  ]}
+>
+  {ctaLabel} <span aria-hidden="true">→</span>
+</a>

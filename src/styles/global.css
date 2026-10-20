@@ -1,0 +1,21 @@
+@import "tailwindcss";
+@import "./tokens.css";
+
+/* The design references are inline-styled HTML, not page sources */
+@source not "../../design";
+
+@layer base {
+  body {
+    @apply bg-paper text-ink antialiased;
+    line-height: normal;
+  }
+
+  a:hover {
+    opacity: 0.88;
+  }
+
+  a:focus-visible {
+    outline: 2px solid var(--color-violet);
+    outline-offset: 3px;
+  }
+}

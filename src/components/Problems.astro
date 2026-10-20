@@ -1,0 +1,40 @@
+---
+import SectionLabel from "./SectionLabel.astro";
+import { problems } from "../content/landing";
+
+// Bullet colors in card order
+const bulletGradients = ["from-indigo to-violet", "from-violet to-coral", "from-coral to-amber", "from-blue to-amber"];
+---
+
+<section class="border-t border-line">
+  <div
+    class="mx-auto flex max-w-page flex-col gap-6 px-6 pt-14 pb-16 md:flex-row md:flex-wrap md:gap-x-20 md:gap-y-10 md:px-10 md:py-24"
+  >
+    <div class="flex flex-col gap-6 md:grow md:basis-70 md:gap-5">
+      <SectionLabel>{problems.label}</SectionLabel>
+      <h2 class="text-heading font-medium text-balance">{problems.title}</h2>
+    </div>
+
+    <ul
+      class="grid gap-2.5 md:min-w-0 md:grow-2 md:basis-140 md:grid-cols-[repeat(auto-fit,minmax(min(100%,280px),1fr))] md:gap-3"
+    >
+      {
+        problems.items.map((text, i) => (
+          <li class="flex gap-3.5 rounded-card bg-white p-4.5 shadow-card md:p-6">
+            {/* Mobile: round dot; desktop: diamond with a white center */}
+            <span
+              aria-hidden="true"
+              class:list={[
+                "mt-2 size-2 flex-none items-center justify-center rounded-full bg-linear-135/srgb md:mt-1.25 md:flex md:size-4 md:rotate-45 md:rounded-bullet md:shadow-bullet",
+                bulletGradients[i],
+              ]}
+            >
+              <span class="hidden size-1.25 rounded-pip bg-white md:block" />
+            </span>
+            <p class="text-problem text-pretty">{text}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

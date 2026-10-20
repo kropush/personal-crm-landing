@@ -1,0 +1,33 @@
+---
+// Decorative "sunrise" behind the hero band and the final CTA: a glowing ellipse at the bottom plus thin rays.
+interface Props {
+  placement: "hero" | "cta";
+}
+
+const { placement } = Astro.props;
+
+const glowPosition = {
+  hero: "-bottom-65 md:-bottom-105",
+  cta: "-bottom-75 md:-bottom-115",
+};
+---
+
+<div
+  aria-hidden="true"
+  class:list={[
+    "glow absolute -inset-x-15 h-140 rounded-full md:inset-x-auto md:left-1/2 md:h-205 md:w-400 md:-translate-x-1/2",
+    glowPosition[placement],
+  ]}
+>
+</div>
+<div aria-hidden="true" class="rays absolute inset-0"></div>
+
+<style>
+  .glow {
+    background: var(--glow-sunrise);
+  }
+
+  .rays {
+    background: var(--rays);
+  }
+</style>
