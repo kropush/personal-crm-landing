@@ -19,3 +19,15 @@ pnpm preview   # посмотреть собранную версию
 - `src/config.ts` - адрес приложения (можно переопределить через `PUBLIC_APP_URL` в `.env`)
 - `public/fonts/` - шрифты Inter Tight и JetBrains Mono
 - `design/` - макет, по которому собрана страница
+
+## Выкатка
+
+Сайт живёт на https://kropcrm.ru. Новая версия выкатывается сама после каждого push в ветку `main`:
+
+1. GitHub Actions собирает страницу (`.github/workflows/deploy.yml`)
+2. Кладёт собранную папку `dist/` на сервер в `/var/www/kropcrm.ru`
+3. Проверяет, что https://kropcrm.ru отвечает и показывает именно эту сборку
+
+Ход и итог выкатки - во вкладке Actions репозитория на GitHub. Запустить выкатку вручную - там же, кнопка «Run workflow».
+
+Как устроено на сервере: отдельный пользователь `landing-deploy` без прав администратора; его ключ разрешает только загрузку файлов в папку лендинга. Секреты GitHub: `DEPLOY_SSH_KEY`, `DEPLOY_HOST`, `DEPLOY_KNOWN_HOSTS`.

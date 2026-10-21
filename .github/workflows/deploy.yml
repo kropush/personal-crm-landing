@@ -1,0 +1,58 @@
+# Every push to main: build the site and upload dist/ to the server.
+# The server key only allows rsync into /var/www/kropcrm.ru (rrsync on the server side),
+# so the upload path below is relative to that folder.
+
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: pnpm/action-setup@v6
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm build
+
+      - name: Upload to server
+        env:
+          SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+          HOST: ${{ secrets.DEPLOY_HOST }}
+        run: |
+          install -d -m 700 ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+          # --delete-after: remove old files only once the new ones are in place
+          rsync -rlptz --checksum --delete-after --chmod=D755,F644 \
+            -e "ssh -i ~/.ssh/deploy_key -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes" \
+            dist/ "landing-deploy@$HOST:"
+          rm -f ~/.ssh/deploy_key
+
+      - name: Check the live page
+        run: |
+          code=$(curl -sS -o live.html -w '%{http_code}' https://kropcrm.ru/)
+          echo "https://kropcrm.ru/ answered $code"
+          test "$code" = 200
+          cmp live.html dist/index.html
+          echo "The live page is this build"
