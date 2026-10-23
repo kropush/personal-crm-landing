@@ -1,11 +1,15 @@
 // All page copy, verbatim from the design (design/README.md). Change texts only with the owner's approval.
 
+export const brand = "Личная CRM";
+
 export const meta = {
-  title: "Личная CRM - помните о людях, которые вам важны.",
+  // Shortened at the owner's request; the design has "Личная CRM - помните о людях, которые вам важны."
+  title: brand,
   description: "Все контакты и заметки в одном месте: открыл, нашел человека, вспомнил, о чем договорились.",
+  // The link preview image shows the brand and the promise
+  imageAlt: "Личная CRM - помните о людях, которые вам важны.",
 };
 
-export const brand = "Личная CRM";
 export const ctaLabel = "Открыть CRM";
 
 // Non-breaking space after "о" keeps the preposition on the same line as the next word
